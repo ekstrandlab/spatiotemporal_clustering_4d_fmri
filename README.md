@@ -4,7 +4,7 @@
 
 This project focuses on analyzing fMRI data to understand the spatiotemporal dynamics of activation associated with stimulus events. The project involves two main steps: data restructuring and spatiotemporal clustering. The goal is to gain insights into the fMRI response amplitude and identify significant activation patterns across time and space.
 
-## Data Restructuring
+## Step 1: Data Restructuring
 
 In the first step, the fMRI data is restructured to facilitate subsequent analysis using the code provided in 'restructure_data_for_spatiotemporal_clustering'. The following process is followed:
 
@@ -12,7 +12,7 @@ In the first step, the fMRI data is restructured to facilitate subsequent analys
 2. Amplitude Averaging: For each participant, the fMRI response amplitudes are averaged across events at each time point. This provides an estimate of the fMRI response amplitude for each time point for each participant.
 3. Averaged responses for each participant are concatonated into a 5D file for the second step of the analysis, spatiotemporal clustering.
 
-## Spatiotemporal Clustering
+## Step 2: Spatiotemporal Clustering
 
 In the second step, spatiotemporal clustering is performed using the code provided in 'perform_spatiotemporal_clustering_4d_fmri_t_test'. This code performs permutation testing implemented using spatiotemporal cluster tests from the stats module of MNE (https://mne.tools/stable/index.html#). The clustering is carried out across time and space using one-sample, paired, or independent t-tests, as specified by the user. This analysis helps identify significant activation patterns and understand the spatiotemporal dynamics of fMRI activation at each timepoint.
 
