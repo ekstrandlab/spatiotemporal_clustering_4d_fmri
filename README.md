@@ -41,8 +41,9 @@ Please see *Required Data Structure* section below for an example of data should
             sub-01_task-Movie_events.tsv
      ```
 2. Ensure you have timing files for the events of interest for each participant. The first column should represent the onset of the specific event in seconds, and the second column should represent the duration of the event. For each event, place timing files in a separate folder. Timing files should start with the subject number in BIDS format and be saved as .txt files. For example: ~/Condition1Timing/sub-001_task-condition1.txt
-3. Open 'restructure_data_for_spatiotemporal_clustering.ipynb' in a Jupyter Notebook. See [Data Restructuring Code Summary](#data-restructuring-code-summary) for full details for running this code.
-4. 
+3. Open and run 'restructure_data_for_spatiotemporal_clustering.ipynb' in a Jupyter Notebook. See [Data Restructuring Code Summary](#data-restructuring-code-summary) for full details for running this code.
+4. Use the resulting files from 'restructure_data_for_spatiotemporal_clustering.ipynb' as input for Step 2: Spatiotemporal clustering
+
 
 ## Required Data Structure
 
