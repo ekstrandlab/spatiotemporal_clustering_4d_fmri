@@ -14,7 +14,7 @@ In the first step, the fMRI data is restructured to facilitate subsequent analys
 
 ## Step 2: Spatiotemporal Clustering
 
-In the second step, spatiotemporal clustering is performed using the code provided in 'perform_spatiotemporal_clustering_4d_fmri_t_test'. This code performs permutation testing implemented using spatiotemporal cluster tests from the stats module of MNE (https://mne.tools/stable/index.html#). The clustering is carried out across time and space using one-sample, paired, or independent t-tests, as specified by the user. This analysis helps identify significant activation patterns and understand the spatiotemporal dynamics of fMRI activation at each timepoint.
+In the second step, spatiotemporal clustering is performed using the code provided in 'perform_spatiotemporal_clustering_4d_fmri_pairedt_test'. This code performs permutation testing implemented using spatiotemporal cluster tests from the stats module of MNE (https://mne.tools/stable/index.html#). The clustering is carried out across time and space using one-sample, paired, or independent t-tests, as specified by the user (one-sample and independent sample t-tests coming soon!). This analysis helps identify significant activation patterns and understand the spatiotemporal dynamics of fMRI activation at each timepoint.
 
 ## Requirements
 
@@ -25,6 +25,7 @@ In the second step, spatiotemporal clustering is performed using the code provid
 - glob
 - os
 - mne
+- scipy
 
 ## Usage
 
@@ -54,21 +55,17 @@ Please see *Required Data Structure* section below for an example of data should
       - sub-001_task-Movie_condition1.txt # Example event timing file
    - Condition2_event_files/
       - sub-001_task-Movie_condition2.txt # Example event timing file
-- src/
-   - restructure_data_for_spatiotemporal_clustering.ipynb # Code for data restructuring
-   - perform_spatiotemporal_clustering_4d_fmri_t_test.ipynb  # Code for spatiotemporal clustering
 - results/
    - 20sub_average_task-Movie_cond-condition1_TRtimepoints-10.nii.gz # Output file for condition 1 after data restructuring
    - 20sub_average_task-Movie_cond-condition2_TRtimepoints-10.nii.gz # Output file for condition 2 after data restructuring
    - clustering_results/ # Directory for clustering results
-- README.md # Project overview and instructions
-- LICENSE # License information
 ```
 
 ## Data Restructuring Code Summary
 
-To use the 'restructure_data_for_spatiotemporal_clustering.ipynb' code, follow these steps:
-1. Set parameters in the # Set parameters block, a description of each parameter is as follows:
+To use the 'restructure_data_for_spatiotemporal_clustering.ipynb' code:
+
+Set parameters in the # Set parameters block, a description of each parameter is as follows:
    - fmri_path : path to the subject MRI directories in BIDS formater
    - cond1_path : path to the timing files for each participant for condition 1. Timing files should start with the participant number and end in .txt
    - cond1_path : path to the timing files for each participant for condition 2. Timing files should start with the participant number and end in .txt
@@ -81,5 +78,3 @@ To use the 'restructure_data_for_spatiotemporal_clustering.ipynb' code, follow t
    - TR : the fMRI repetition time of your data
    - saveSubs : 'y' = yes, 'n' = no, option to save the averaged fMRI volumes for each participant related to each event
 
-
-## License
